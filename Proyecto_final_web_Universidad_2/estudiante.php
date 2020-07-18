@@ -145,10 +145,10 @@ include_once 'connect_database.php';
                                     $result2=mysqli_query($conn,$sql2);
                                     $row2=mysqli_fetch_assoc($result2);
                                     echo "<tr> 
-                                            <td style='background-color:#FFFFFF'>>" .$contador."</td>
-                                            <td style='background-color:#FFFFFF'>>" .$row['materia_name']."</td>
-                                            <td style='background-color:#FFFFFF'>>" .$row2['nombre']." ".$row2['apellido']."</td>
-                                            <td style='background-color:#FFFFFF'>>" .$row['nota']."</td>
+                                            <td style='background-color:#FFFFFF'>" .$contador."</td>
+                                            <td style='background-color:#FFFFFF'>" .$row['materia_name']."</td>
+                                            <td style='background-color:#FFFFFF'>" .$row2['nombre']." ".$row2['apellido']."</td>
+                                            <td style='background-color:#FFFFFF'>" .$row['nota']."</td>
                                         </tr>";
                                         $contador++;
                                 }

@@ -26,11 +26,14 @@ session_start();
         
         if($resultUpdate&&$resultUpdate2)
             {
-            echo "<strong>El registro fue exitoso</strong>. <br>";
-            }
+              $message = "Actualizacion exitosa";
+              echo "<script type='text/javascript'>window.onload = function(){ 
+                alert('$message');}</script>";            }
         else
             {
-            echo "No se pudo actualizar el registro. <br>";
+              $message = "Actualizacion no exitosa";
+              echo "<script type='text/javascript'>window.onload = function(){ 
+                alert('$message');}</script>"; 
             }
     
     }
@@ -49,11 +52,15 @@ session_start();
 
         if($resultUpdate&&$resultUpdate)
         {
-        echo "<strong>El registro fue exitoso</strong>. <br>";
+          $message = "Actualizacion exitosa";
+          echo "<script type='text/javascript'>window.onload = function(){ 
+            alert('$message');}</script>"; 
         }
         else
         {
-        echo "No se pudo actualizar el registro. <br>";
+          $message = "Actualizacion exitosa";
+          echo "<script type='text/javascript'>window.onload = function(){ 
+            alert('$message');}</script>"; 
         }
         
     }
@@ -81,19 +88,24 @@ session_start();
             
          }
         if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
-        echo "New record created successfully";
+          $message = "Registro exitoso";
+          echo "<script type='text/javascript'>window.onload = function(){ 
+            alert('$message');}</script>"; 
         } else {
+          $message = "Registro no exitoso";
+              echo "<script type='text/javascript'>window.onload = function(){ 
+                alert('$message');}</script>"; 
         echo "Error: " . $sql . "<br>" . $conn->error;
         echo "Error: " . $sql2 . "<br>" . $conn->error;
         }
-        if($new_estudiante_materia!='' && $new_estudiante_profesor!=''){
+        // if($new_estudiante_materia!='' && $new_estudiante_profesor!=''){
 
-        if ($conn->query($sql3) === TRUE) {
-            echo "New record created successfully";
-            } else {
-            echo "Error: " . $sql3 . "<br>" . $conn->error;
-            }
-        }    
+        // if ($conn->query($sql3) === TRUE) {
+        //     echo "New record created successfully";
+        //     } else {
+        //     echo "Error: " . $sql3 . "<br>" . $conn->error;
+        //     }
+        // }    
 
     }
     if(isset($_POST['agregar'])){
@@ -106,8 +118,13 @@ session_start();
         VALUES ('$new_estudiante_materia', '$estudiante_usuario', '$new_estudiante_profesor','$new_estudiante_nota')";
 
         if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+          $message = "Registro exitoso";
+          echo "<script type='text/javascript'>window.onload = function(){ 
+            alert('$message');}</script>"; 
         } else {
+          $message = "Registro no exitoso";
+              echo "<script type='text/javascript'>window.onload = function(){ 
+                alert('$message');}</script>"; 
         echo "Error: " . $sql . "<br>" . $conn->error;
         }
 
@@ -119,7 +136,9 @@ session_start();
         $sql = "DELETE FROM usuarios WHERE username='$estudiante_usuario'";
 
         if ($conn->query($sql) === TRUE) {
-        echo "Record deleted successfully";
+          $message = "Estudiante eliminado";
+          echo "<script type='text/javascript'>window.onload = function(){ 
+            alert('$message');}</script>"; 
         } else {
         echo "Error deleting record: " . $conn->error;
         }
@@ -134,8 +153,13 @@ session_start();
         $sql = "DELETE FROM materias WHERE usuario_estudiante='$elim_estudiante_username' AND materia_name='$elim_estudiante_materia' AND profesor='$elim_estudiante_profesor'" ;
 
         if ($conn->query($sql) === TRUE) {
-        echo "Record deleted successfully";
+          $message = "Materia eliminada";
+          echo "<script type='text/javascript'>window.onload = function(){ 
+            alert('$message');}</script>"; 
         } else {
+          $message = "Materia no eliminada";
+              echo "<script type='text/javascript'>window.onload = function(){ 
+                alert('$message');}</script>"; 
         echo "Error deleting record: " . $conn->error;
         }
     }
