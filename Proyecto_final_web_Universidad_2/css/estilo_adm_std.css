@@ -1,0 +1,57 @@
+body{
+    background-image: url(img/adm1.png);  
+    background-size:1500px 800px;
+}
+
+
+table{
+    border:1px solid black;
+    border-collapse:collapse ;
+	padding:0px;
+}
+
+th{
+    padding:10px;
+    border:1px solid black;
+
+	
+}
+
+td{
+    padding:10px;
+     border:1px solid black;
+	text-align:left;
+}
+
+tr:nth-child(even)
+{
+      background-color:white;
+}
+
+tr:nth-child(odd)
+{
+      background-color:#eee;
+}
+
+#Id, #Datos, #SP{
+    background-color:#0056ff;
+}
+
+#Btn_AE{
+    background-color:#ffdf00;
+}
+
+input.btn_actualizar{
+    background-color:#0079FF;
+    color: white;
+}
+
+input.btn_elminar_est{
+    background-color:#FF4140;
+    color: white;
+}
+
+input.btn_agregar{
+    background-color:#00D600;
+    color: white;
+}
